@@ -89,6 +89,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        else if (!CanMove)
+        {
+            rb.linearVelocity = new Vector3(0,0,0);
+        }
     }
 
 }
