@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         isDialogueActive = true;
-
+        PlayerController.Instance.CanMove = false;
         animator.Play("show");
 
         lines.Clear();
@@ -75,6 +75,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         isDialogueActive = false;
+        PlayerController.Instance.CanMove = true;
         animator.Play("hide");
     }
 }
