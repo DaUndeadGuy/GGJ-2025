@@ -848,8 +848,58 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 924301326717782217, guid: aae064ec06860f04787f3ee19de1c0c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 757986404}
+    - targetCorrespondingSourceObject: {fileID: 924301326717782217, guid: aae064ec06860f04787f3ee19de1c0c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 757986406}
   m_SourcePrefab: {fileID: 100100000, guid: aae064ec06860f04787f3ee19de1c0c1, type: 3}
+--- !u!1 &757986403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924301326717782217, guid: aae064ec06860f04787f3ee19de1c0c1, type: 3}
+  m_PrefabInstance: {fileID: 757986402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &757986404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757986403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fa61fc7fcd7e9478715f0f4b4c2b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: MC
+        icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
+      line: A printer.... I only see government files get printed from this.
+--- !u!114 &757986406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757986403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebeaf81d949dab442b4528a060b0a412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FocusTarget: {fileID: 757986407}
+  OnCutsceneEnd:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &757986407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 547213211751928435, guid: aae064ec06860f04787f3ee19de1c0c1, type: 3}
+  m_PrefabInstance: {fileID: 757986402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &837515171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3615181327127093672, guid: 3461c8d14bc13bb4384505ad2b8b974f, type: 3}
@@ -1063,6 +1113,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc718be6246e4614abef00d6a70adc29, type: 3}
+--- !u!1001 &1268642885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15534154
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.494844
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.935273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003505174712907874, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891331122544086784, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
 --- !u!43 &1307952773
 Mesh:
   m_ObjectHideFlags: 0
@@ -3122,3 +3229,4 @@ SceneRoots:
   - {fileID: 1172120198}
   - {fileID: 480761477}
   - {fileID: 1809992383}
+  - {fileID: 1268642885}
