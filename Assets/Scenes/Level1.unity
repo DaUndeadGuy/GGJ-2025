@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &149951183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2990103417633397845, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
+  m_PrefabInstance: {fileID: 5647660904943208478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &149951188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149951183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fa61fc7fcd7e9478715f0f4b4c2b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Reyna
+        icon: {fileID: 0}
+      line: TV is to broadcast as Cabinet is to store.
+    - character:
+        name: MC
+        icon: {fileID: 0}
+      line: ..... What?
+    - character:
+        name: Reyna
+        icon: {fileID: 0}
+      line: "It\u2019s an analogy! Come on, put that brain to use!"
 --- !u!4 &158382111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 247477366942519185, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
@@ -316,8 +347,12 @@ MonoBehaviour:
     - character:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
-      line: "Huh? It\u2019s opened a little? Gee, they didn\u2019t think to look
-        into the drawer first\u2026 Huh? Nevermind."
+      line: 'Hey some cabinets! I remember how I used to hide in things like these
+        before. '
+    - character:
+        name: MC
+        icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
+      line: I wonder why ma'am used this in her sudden pop quiz analogy?
 --- !u!114 &303164151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,8 +712,7 @@ MonoBehaviour:
     - character:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
-      line: Things usually get stuck in between these cushions, but it was left untouched,
-        it was just moved.
+      line: Untouched cushions hm.... These do look deceivingly neat.
 --- !u!114 &609827819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,8 +1086,7 @@ MonoBehaviour:
     - character:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
-      line: Things usually get stuck in between these cushions, but it was left untouched,
-        it was just moved.
+      line: Untouched cushions hm.... These do look deceivingly neat.
 --- !u!114 &1202865520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,6 +2068,11 @@ MonoBehaviour:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: "That is a huge television! I wonder why this wasn\u2019t stolen?"
+    - character:
+        name: MC
+        icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
+      line: Perhaps it couldn't broadcast their favorite Telenovela. So much for
+        rich people things I suppose.
 --- !u!114 &1529675375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2779,6 +2817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LivingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 2990103417633397845, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 3282402535768879161, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
       propertyPath: m_TagString
       value: Interactable
@@ -3004,6 +3046,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8400876304741974278, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 303164151}
+    - targetCorrespondingSourceObject: {fileID: 2990103417633397845, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 149951188}
   m_SourcePrefab: {fileID: 100100000, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
 --- !u!1001 &8190960924237598172
 PrefabInstance:
