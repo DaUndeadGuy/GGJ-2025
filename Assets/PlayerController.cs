@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] GameObject interactCollider;
+
     public float speed;
     public float groundDist;
 
@@ -38,10 +40,20 @@ public class PlayerController : MonoBehaviour
         if (x != 0 && x < 0)
         {
             sr.flipX = true;
+            interactCollider.transform.rotation = Quaternion.Euler(
+                interactCollider.transform.rotation.eulerAngles.x,
+                interactCollider.transform.rotation.eulerAngles.y,
+                180 // Rotation around the Z-axis
+            );
         }
         else if (x != 0 && x > 0)
         {
             sr.flipX = false;
+            interactCollider.transform.rotation = Quaternion.Euler(
+                interactCollider.transform.rotation.eulerAngles.x,
+                interactCollider.transform.rotation.eulerAngles.y,
+                0 // Reset rotation
+            );
         }
     }
 }
