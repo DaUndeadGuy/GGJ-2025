@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask terrainLayer;
     public Rigidbody rb;
     public SpriteRenderer sr;
+    public Sprite rightSprite; // Sprite for moving right
+    public Sprite leftSprite;  // Sprite for moving left
+    public Sprite downSprite; // Sprite for moving right
+    public Sprite upSprite;  // Sprite for moving left
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,21 +43,20 @@ public class PlayerController : MonoBehaviour
 
         if (x != 0 && x < 0)
         {
-            sr.flipX = true;
-            interactCollider.transform.rotation = Quaternion.Euler(
-                interactCollider.transform.rotation.eulerAngles.x,
-                interactCollider.transform.rotation.eulerAngles.y,
-                180 // Rotation around the Z-axis
-            );
+            sr.sprite = leftSprite;
         }
         else if (x != 0 && x > 0)
         {
-            sr.flipX = false;
-            interactCollider.transform.rotation = Quaternion.Euler(
-                interactCollider.transform.rotation.eulerAngles.x,
-                interactCollider.transform.rotation.eulerAngles.y,
-                0 // Reset rotation
-            );
+            sr.sprite = rightSprite;
+        }
+
+        else if (y != 0 && y < 0)
+        {
+            sr.sprite = downSprite;
+        }
+        else if (y != 0 && y > 0)
+        {
+            sr.sprite = upSprite;
         }
     }
 }
