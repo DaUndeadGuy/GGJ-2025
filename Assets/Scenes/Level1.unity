@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: Reyna
@@ -156,6 +157,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!4 &158382111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 247477366942519185, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
@@ -355,7 +359,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 691887318}
+  - {fileID: 1948572255}
+  - {fileID: 627544977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302599896
@@ -468,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -483,6 +489,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!114 &303164151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +508,11 @@ MonoBehaviour:
   OnCutsceneEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &323902986 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+  m_PrefabInstance: {fileID: 2408747603057021116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &329956820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -804,6 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -814,6 +829,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!65 &466203921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -865,6 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -874,6 +893,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!4 &533910254
 Transform:
   m_ObjectHideFlags: 0
@@ -912,6 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -921,6 +944,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!114 &609827819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,6 +963,38 @@ MonoBehaviour:
   OnCutsceneEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &627544976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627544977}
+  m_Layer: 0
+  m_Name: Disable
+  m_TagString: Disable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627544977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627544976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 691887318}
+  m_Father: {fileID: 269599413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &646572533
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: Reyna
@@ -976,6 +1035,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!4 &646572535
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,13 +1080,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691887317}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.833, y: 0.46, z: -1.863}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.833, y: 0.46000004, z: -1.863}
   m_LocalScale: {x: 0.039624657, y: 0.039624657, z: 0.039624657}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 302599897}
-  m_Father: {fileID: 269599413}
+  m_Father: {fileID: 627544977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &691887319
 MonoBehaviour:
@@ -1039,20 +1101,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: Level 1
     dialogueLines:
     - character:
         name: Reyna
         icon: {fileID: 0}
       line: TV is to broadcast as Cabinet is to store.
-      choices:
-      - text: sada
-        onSelect:
-          m_PersistentCalls:
-            m_Calls: []
-      - text: sad
-        onSelect:
-          m_PersistentCalls:
-            m_Calls: []
+      choices: []
     - character:
         name: MC
         icon: {fileID: 0}
@@ -1065,7 +1120,22 @@ MonoBehaviour:
       choices: []
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!135 &691887320
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1129,15 +1199,15 @@ RectTransform:
   m_GameObject: {fileID: 701827756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4785, y: 0.4785, z: 0.4785}
+  m_LocalScale: {x: 1, y: 1, z: 1.4785}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 329956821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 103}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 14.9, y: 95}
+  m_SizeDelta: {x: 331.04, y: 130.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701827758
 MonoBehaviour:
@@ -1677,6 +1747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -1686,6 +1757,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!114 &1202865520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2662,6 +2736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -2677,6 +2752,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!114 &1529675375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,6 +2801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -2737,6 +2816,9 @@ MonoBehaviour:
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!4 &1667710122
 Transform:
   m_ObjectHideFlags: 0
@@ -2873,6 +2955,38 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1948572254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948572255}
+  m_Layer: 0
+  m_Name: Enable
+  m_TagString: Enable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1948572255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948572254}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 0.909, z: 0.255}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 323902986}
+  m_Father: {fileID: 269599413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2044640252
 Mesh:
   m_ObjectHideFlags: 0
@@ -3225,6 +3339,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2408747603057021116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1948572255}
+    m_Modifications:
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.86599994
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.361
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.7129998
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 654912118474644212, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886488358554672194, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_Name
+      value: Reyna 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886488358554672194, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e21d16b0e8a6b484e823c6f0f9cbbe25, type: 3}
 --- !u!1001 &5548250855617506455
 PrefabInstance:
   m_ObjectHideFlags: 0

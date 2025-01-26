@@ -5,7 +5,6 @@ public class BubbleCollisionChecker : MonoBehaviour
     public RectTransform rectTransform; // RectTransform of the current UI element
     private DraggableBubble draggableBubble; // Reference to DraggableBubble script
     private DialogueTrigger dialogueTrigger; // Reference to DialogueTrigger if attached
-    private bool wasMovementEnabled; // Tracks previous movement state
 
     private void Awake()
     {
@@ -26,16 +25,9 @@ public class BubbleCollisionChecker : MonoBehaviour
         dialogueTrigger = GetComponent<DialogueTrigger>();
     }
 
-    private void Start()
-    {
-        // Initialize movement state
-        wasMovementEnabled = PlayerController.Instance?.CanMove ?? true;
-    }
-
     private void Update()
     {
         CheckForUIOverlaps();
-        CheckMovementState();
     }
 
     private void CheckForUIOverlaps()
@@ -53,43 +45,56 @@ public class BubbleCollisionChecker : MonoBehaviour
             // Check for RectTransform overlaps
             if (RectOverlaps(rectTransform, otherBubble.GetComponent<RectTransform>()))
             {
-                // Check for dialogue trigger on either bubble
-                DialogueTrigger otherDialogueTrigger = otherBubble.GetComponent<DialogueTrigger>();
-
-                if (dialogueTrigger != null)
-                {
-                    Debug.Log($"[BubbleCollisionChecker] Triggering dialogue for {gameObject.name}.");
-                    dialogueTrigger.TriggerDialogue();
-                }
-                else if (otherDialogueTrigger != null)
-                {
-                    Debug.Log($"[BubbleCollisionChecker] Triggering dialogue for {otherBubble.name}.");
-                    otherDialogueTrigger.TriggerDialogue();
-                }
-                else
-                {
-                    Debug.Log($"[BubbleCollisionChecker] Overlap detected, but no dialogue triggers found for {gameObject.name} or {otherBubble.name}.");
-                }
+                HandleCollision(otherBubble.gameObject);
             }
         }
     }
 
-    private void CheckMovementState()
+    private void HandleCollision(GameObject otherBubble)
     {
-        // Check if movement has been re-enabled
-        if (PlayerController.Instance != null)
+        // Get the DraggableBubble component of the other bubble
+        DraggableBubble otherDraggableBubble = otherBubble.GetComponent<DraggableBubble>();
+        if (otherDraggableBubble == null)
         {
-            bool isMovementEnabled = PlayerController.Instance.CanMove;
+            Debug.LogWarning($"[BubbleCollisionChecker] Other bubble {otherBubble.name} is missing DraggableBubble component.");
+            return;
+        }
 
-            if (isMovementEnabled && !wasMovementEnabled)
+        // Check if bubble types are the same
+        if (draggableBubble.bubbleType == otherDraggableBubble.bubbleType)
+        {
+            Debug.Log($"[BubbleCollisionChecker] Collision detected between {gameObject.name} and {otherBubble.name}. Both bubbles have the same type ({draggableBubble.bubbleType}).");
+
+            // Hide both bubbles by adjusting their alpha
+            HideBubble(gameObject);
+            HideBubble(otherBubble);
+
+            // Trigger dialogue if attached
+            if (dialogueTrigger != null)
             {
-                // Movement was just re-enabled, toggle bubbles off
-                GameFlowManager.Instance.ToggleThoughtBubbles();
-                Debug.Log("[BubbleCollisionChecker] Movement re-enabled. Toggling bubbles off.");
+                Debug.Log($"[BubbleCollisionChecker] Triggering dialogue for {gameObject.name}.");
+                dialogueTrigger.TriggerDialogue();
             }
+        }
+        else
+        {
+            Debug.Log($"[BubbleCollisionChecker] Collision detected between {gameObject.name} and {otherBubble.name}. Bubble types are different ({draggableBubble.bubbleType} vs {otherDraggableBubble.bubbleType}).");
+        }
+    }
 
-            // Update the movement state tracker
-            wasMovementEnabled = isMovementEnabled;
+    private void HideBubble(GameObject bubble)
+    {
+        // Use CanvasGroup to adjust visibility
+        CanvasGroup canvasGroup = bubble.GetComponent<CanvasGroup>();
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 0f; // Make invisible
+            canvasGroup.interactable = false; // Disable interaction
+            canvasGroup.blocksRaycasts = false; // Ignore raycasts
+        }
+        else
+        {
+            Debug.LogWarning($"[BubbleCollisionChecker] No CanvasGroup found on {bubble.name}. Cannot adjust alpha.");
         }
     }
 
