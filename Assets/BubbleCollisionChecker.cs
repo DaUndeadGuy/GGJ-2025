@@ -5,6 +5,7 @@ public class BubbleCollisionChecker : MonoBehaviour
     public RectTransform rectTransform; // RectTransform of the current UI element
     private DraggableBubble draggableBubble; // Reference to DraggableBubble script
     private DialogueTrigger dialogueTrigger; // Reference to DialogueTrigger if attached
+    private bool wasMovementEnabled; // Tracks previous movement state
 
     private void Awake()
     {
@@ -25,9 +26,16 @@ public class BubbleCollisionChecker : MonoBehaviour
         dialogueTrigger = GetComponent<DialogueTrigger>();
     }
 
+    private void Start()
+    {
+        // Initialize movement state
+        wasMovementEnabled = PlayerController.Instance?.CanMove ?? true;
+    }
+
     private void Update()
     {
         CheckForUIOverlaps();
+        CheckMovementState();
     }
 
     private void CheckForUIOverlaps()
@@ -63,6 +71,25 @@ public class BubbleCollisionChecker : MonoBehaviour
                     Debug.Log($"[BubbleCollisionChecker] Overlap detected, but no dialogue triggers found for {gameObject.name} or {otherBubble.name}.");
                 }
             }
+        }
+    }
+
+    private void CheckMovementState()
+    {
+        // Check if movement has been re-enabled
+        if (PlayerController.Instance != null)
+        {
+            bool isMovementEnabled = PlayerController.Instance.CanMove;
+
+            if (isMovementEnabled && !wasMovementEnabled)
+            {
+                // Movement was just re-enabled, toggle bubbles off
+                GameFlowManager.Instance.ToggleThoughtBubbles();
+                Debug.Log("[BubbleCollisionChecker] Movement re-enabled. Toggling bubbles off.");
+            }
+
+            // Update the movement state tracker
+            wasMovementEnabled = isMovementEnabled;
         }
     }
 

@@ -88,7 +88,7 @@ public class GameFlowManager : MonoBehaviour
         UpdatePlayerMovement();
     }
 
-    private void ToggleThoughtBubbles()
+    public void ToggleThoughtBubbles()
     {
         if (activeThoughtBubbles.Count > 0)
         {
