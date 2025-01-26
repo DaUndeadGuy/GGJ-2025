@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Sprite leftSprite;  // Sprite for moving left
     public Sprite downSprite; // Sprite for moving down
     public Sprite upSprite;  // Sprite for moving up
+    private Animator animator;
 
     public bool IsFacingLeft;
     public bool IsFacingUp;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
         }
         if (CanMove)
         {
+
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
             Vector3 moveDir = new Vector3(x, 0, y);
@@ -61,16 +64,20 @@ public class PlayerController : MonoBehaviour
             if (moveDir != Vector3.zero)
             {
                 lastMoveDirection = moveDir;
+                animator.SetBool("isWalking", true);
 
                 if (Mathf.Abs(moveDir.x) > Mathf.Abs(moveDir.z))
                 {
                     // Horizontal movement
-                    sr.sprite = moveDir.x > 0 ? rightSprite : leftSprite;
+                    //sr.sprite = moveDir.x > 0 ? rightSprite : leftSprite;
+                    animator.SetFloat("LastX", moveDir.x);
                 }
                 else
                 {
                     // Vertical movement
-                    sr.sprite = moveDir.z > 0 ? upSprite : downSprite;
+                    //sr.sprite = moveDir.z > 0 ? upSprite : downSprite;
+                    animator.SetFloat("LastX", moveDir.z);
+
                 }
             }
             else
@@ -80,11 +87,15 @@ public class PlayerController : MonoBehaviour
                 {
                     if (Mathf.Abs(lastMoveDirection.x) > Mathf.Abs(lastMoveDirection.z))
                     {
-                        sr.sprite = lastMoveDirection.x > 0 ? rightSprite : leftSprite;
+                        //sr.sprite = lastMoveDirection.x > 0 ? rightSprite : leftSprite;
+                        animator.SetFloat("LastX", lastMoveDirection.x);
+
                     }
                     else
                     {
-                        sr.sprite = lastMoveDirection.z > 0 ? upSprite : downSprite;
+                        //sr.sprite = lastMoveDirection.z > 0 ? upSprite : downSprite;
+                        animator.SetFloat("LastY", lastMoveDirection.z);
+
                     }
                 }
             }

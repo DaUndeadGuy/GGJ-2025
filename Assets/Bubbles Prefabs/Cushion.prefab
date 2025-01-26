@@ -300,41 +300,7 @@ MonoBehaviour:
         name: Reyna
         icon: {fileID: 0}
       line: "Correction, it\u2019s analogies, and it\u2019s to keep your brain sharp."
-      choices:
-      - text: "We\u2019re talking about what things are part off."
-        onSelect:
-          m_PersistentCalls:
-            m_Calls: []
-        isCorrect: 0
-        linkedDialogue:
-          name: W
-          dialogueLines:
-          - character:
-              name: Reyna
-              icon: {fileID: 0}
-            line: That's not quite right. Try Again.
-            choices: []
-      - text: "We\u2019re talking about this messy crime scene."
-        onSelect:
-          m_PersistentCalls:
-            m_Calls: []
-        isCorrect: 1
-        linkedDialogue:
-          name: 
-          dialogueLines: []
-      - text: "We\u2019re talking about different furniture needs."
-        onSelect:
-          m_PersistentCalls:
-            m_Calls: []
-        isCorrect: 0
-        linkedDialogue:
-          name: 
-          dialogueLines:
-          - character:
-              name: Reyna
-              icon: {fileID: 0}
-            line: That's not quite right. Try Again.
-            choices: []
+      choices: []
     - character:
         name: Reyna
         icon: {fileID: 0}
