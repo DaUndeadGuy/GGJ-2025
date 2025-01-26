@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 7292248307184578661}
   - component: {fileID: 2627370460463809272}
   - component: {fileID: -8454231636211908339}
-  - component: {fileID: -3463822512667554022}
   m_Layer: 6
   m_Name: Couch
   m_TagString: Untagged
@@ -230,24 +229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 0}
---- !u!114 &-3463822512667554022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6265449126776130507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41fa61fc7fcd7e9478715f0f4b4c2b34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: MC
-        icon: {fileID: 0}
-      line: Test
 --- !u!1 &8330118494448786245
 GameObject:
   m_ObjectHideFlags: 0

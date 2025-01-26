@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -253,17 +254,99 @@ MonoBehaviour:
         onSelect:
           m_PersistentCalls:
             m_Calls: []
+        isCorrect: 0
+        linkedDialogue:
+          name: W
+          dialogueLines:
+          - character:
+              name: Reyna
+              icon: {fileID: 0}
+            line: That's not quite right. Try Again.
+            choices: []
       - text: "We\u2019re talking about this messy crime scene."
         onSelect:
           m_PersistentCalls:
             m_Calls: []
+        isCorrect: 1
+        linkedDialogue:
+          name: 
+          dialogueLines: []
       - text: "We\u2019re talking about different furniture needs."
         onSelect:
           m_PersistentCalls:
             m_Calls: []
+        isCorrect: 0
+        linkedDialogue:
+          name: 
+          dialogueLines:
+          - character:
+              name: Reyna
+              icon: {fileID: 0}
+            line: That's not quite right. Try Again.
+            choices: []
+    - character:
+        name: Reyna
+        icon: {fileID: 0}
+      line: "Hey! You\u2019re getting pretty good at this!\r\n"
+      choices: []
+    - character:
+        name: MC
+        icon: {fileID: 0}
+      line: 'Only because you keep throwing these random riddles my way
+
+'
+      choices: []
+    - character:
+        name: Reyna
+        icon: {fileID: 0}
+      line: "Correction, it\u2019s analogies, and it\u2019s to keep your brain sharp."
+      choices:
+      - text: "We\u2019re talking about what things are part off."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+        isCorrect: 0
+        linkedDialogue:
+          name: W
+          dialogueLines:
+          - character:
+              name: Reyna
+              icon: {fileID: 0}
+            line: That's not quite right. Try Again.
+            choices: []
+      - text: "We\u2019re talking about this messy crime scene."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+        isCorrect: 1
+        linkedDialogue:
+          name: 
+          dialogueLines: []
+      - text: "We\u2019re talking about different furniture needs."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+        isCorrect: 0
+        linkedDialogue:
+          name: 
+          dialogueLines:
+          - character:
+              name: Reyna
+              icon: {fileID: 0}
+            line: That's not quite right. Try Again.
+            choices: []
+    - character:
+        name: Reyna
+        icon: {fileID: 0}
+      line: "Anyways, it looks like our witness is almost here, as well as Javier\u2026
+        well, I hope."
+      choices: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
+  tagToEnable: 
+  tagToDisable: 
+  nextStageIndex: -1
 --- !u!1 &8330118494448786245
 GameObject:
   m_ObjectHideFlags: 0

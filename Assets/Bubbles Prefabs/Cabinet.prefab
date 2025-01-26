@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+    name: 
     dialogueLines:
     - character:
         name: MC
@@ -253,17 +254,59 @@ MonoBehaviour:
         onSelect:
           m_PersistentCalls:
             m_Calls: []
-      - text: '*Hums a tv show theme*'
-        onSelect:
-          m_PersistentCalls:
-            m_Calls: []
+        isCorrect: 1
+        linkedDialogue:
+          name: 
+          dialogueLines: []
       - text: "There\u2019s no evidence in either of them."
         onSelect:
           m_PersistentCalls:
             m_Calls: []
+        isCorrect: 0
+        linkedDialogue:
+          name: Wrong
+          dialogueLines: []
+      - text: "There\u2019s no evidence in either of them."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+        isCorrect: 0
+        linkedDialogue:
+          name: Wrong
+          dialogueLines:
+          - character:
+              name: Reyna
+              icon: {fileID: 0}
+            line: That's not quite right. Try Again.
+            choices: []
+    - character:
+        name: MC
+        icon: {fileID: 0}
+      line: "It\u2019s related to functionalities.\r"
+      choices: []
+    - character:
+        name: Reyna
+        icon: {fileID: 0}
+      line: "And that\u2019s how they relate!\r"
+      choices: []
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -244097674494887418}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ChangeStage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  tagToEnable: Enable
+  tagToDisable: Disable
+  nextStageIndex: -1
 --- !u!1 &8330118494448786245
 GameObject:
   m_ObjectHideFlags: 0

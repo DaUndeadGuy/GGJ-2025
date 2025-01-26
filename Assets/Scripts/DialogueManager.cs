@@ -100,7 +100,6 @@ public class DialogueManager : MonoBehaviour
             ShowChoices(dialogueLine.choices);
         }
     }
-
     private void ShowChoices(List<DialogueChoice> choices)
     {
         if (choiceContainer == null)
@@ -115,31 +114,18 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // Clear any existing choices
+        // Clear previous choices
         foreach (Transform child in choiceContainer)
         {
             Destroy(child.gameObject);
         }
 
-        if (choices.Count == 0)
-        {
-            Debug.LogWarning("[DialogueManager] No choices available for this dialogue line.");
-            return;
-        }
-
-        // Create a button for each choice
+        // Create buttons for each choice
         foreach (DialogueChoice choice in choices)
         {
             GameObject choiceButton = Instantiate(choicePrefab, choiceContainer);
-            if (choiceButton == null)
-            {
-                Debug.LogError("[DialogueManager] Failed to instantiate choicePrefab!");
-                return;
-            }
-
-            Debug.Log($"[DialogueManager] Instantiated choice: {choice.text}");
-
             TextMeshProUGUI choiceText = choiceButton.GetComponentInChildren<TextMeshProUGUI>();
+
             if (choiceText == null)
             {
                 Debug.LogError("[DialogueManager] ChoicePrefab is missing a TextMeshProUGUI component!");
@@ -148,7 +134,7 @@ public class DialogueManager : MonoBehaviour
 
             choiceText.text = choice.text;
 
-            // Assign the UnityEvent to the button's onClick event
+            // Assign behavior to the button
             Button button = choiceButton.GetComponent<Button>();
             if (button == null)
             {
@@ -158,12 +144,30 @@ public class DialogueManager : MonoBehaviour
 
             button.onClick.AddListener(() =>
             {
-                choice.onSelect?.Invoke(); // Execute the assigned action
+                choice.onSelect?.Invoke(); // Trigger the UnityEvent
                 ClearChoices();
-                DisplayNextDialogueLine();
+
+                if (choice.isCorrect)
+                {
+                    // Continue current dialogue
+                    Debug.Log("[DialogueManager] Correct choice selected, continuing dialogue.");
+                    DisplayNextDialogueLine();
+                }
+                else if (choice.linkedDialogue != null)
+                {
+                    // Switch to the linked dialogue
+                    Debug.Log($"[DialogueManager] Wrong choice, switching to dialogue: {choice.linkedDialogue.name}");
+                    StartDialogue(choice.linkedDialogue);
+                }
+                else
+                {
+                    Debug.LogWarning("[DialogueManager] No linked dialogue for this choice.");
+                }
             });
         }
     }
+
+
 
     private void ClearChoices()
     {
