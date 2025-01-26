@@ -76,28 +76,13 @@ public class PlayerController : MonoBehaviour
                 {
                     // Vertical movement
                     //sr.sprite = moveDir.z > 0 ? upSprite : downSprite;
-                    animator.SetFloat("LastX", moveDir.z);
+                    animator.SetFloat("LastY", moveDir.z);
 
                 }
             }
             else
             {
-                // Optional: Handle idle state by keeping the last direction
-                if (lastMoveDirection != Vector3.zero)
-                {
-                    if (Mathf.Abs(lastMoveDirection.x) > Mathf.Abs(lastMoveDirection.z))
-                    {
-                        //sr.sprite = lastMoveDirection.x > 0 ? rightSprite : leftSprite;
-                        animator.SetFloat("LastX", lastMoveDirection.x);
-
-                    }
-                    else
-                    {
-                        //sr.sprite = lastMoveDirection.z > 0 ? upSprite : downSprite;
-                        animator.SetFloat("LastY", lastMoveDirection.z);
-
-                    }
-                }
+                animator.SetBool("isWalking", false);
             }
         }
         else if (!CanMove)
