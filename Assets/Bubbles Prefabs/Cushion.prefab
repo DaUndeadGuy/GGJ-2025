@@ -248,6 +248,22 @@ MonoBehaviour:
         name: MC
         icon: {fileID: 0}
       line: And cushions are normally on couches I supposed, meaning...
+      choices:
+      - text: "We\u2019re talking about what things are part off."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+      - text: "We\u2019re talking about this messy crime scene."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+      - text: "We\u2019re talking about different furniture needs."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8330118494448786245
 GameObject:
   m_ObjectHideFlags: 0

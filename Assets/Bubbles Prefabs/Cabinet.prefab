@@ -248,6 +248,22 @@ MonoBehaviour:
         name: MC
         icon: {fileID: 0}
       line: "and a cabinet can store things\u2026 meaning the connect in a way that\u2026"
+      choices:
+      - text: "It\u2019s what they can do."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+      - text: '*Hums a tv show theme*'
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+      - text: "There\u2019s no evidence in either of them."
+        onSelect:
+          m_PersistentCalls:
+            m_Calls: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8330118494448786245
 GameObject:
   m_ObjectHideFlags: 0
