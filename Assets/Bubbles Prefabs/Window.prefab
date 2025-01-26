@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6720557841784382512}
   - component: {fileID: 8546012341137590950}
   - component: {fileID: 509889875072059178}
-  - component: {fileID: -6242411435440805572}
   - component: {fileID: 7292248307184578661}
   - component: {fileID: 2627370460463809272}
-  - component: {fileID: 8191931943564908599}
-  m_Layer: 5
-  m_Name: ThoughtBubble 1
+  - component: {fileID: -8454231636211908339}
+  - component: {fileID: -3463822512667554022}
+  m_Layer: 6
+  m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,33 +117,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!50 &-6242411435440805572
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6265449126776130507}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7292248307184578661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de68009826314f148a4464304a4e0ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleType: Hi
+  bubbleType: kacislosingit
 --- !u!225 &2627370460463809272
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -169,7 +142,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &8191931943564908599
+--- !u!114 &-8454231636211908339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,8 +154,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef03cbd3b2f76f479f664595ae98791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleType: Hi
   rectTransform: {fileID: 0}
+--- !u!114 &-3463822512667554022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265449126776130507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fa61fc7fcd7e9478715f0f4b4c2b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: MC
+        icon: {fileID: 0}
+      line: Test
 --- !u!1 &8330118494448786245
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +184,7 @@ GameObject:
   - component: {fileID: 9001786902609164607}
   - component: {fileID: 3909214852074448268}
   - component: {fileID: 3047197339821954082}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

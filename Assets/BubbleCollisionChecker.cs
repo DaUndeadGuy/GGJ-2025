@@ -4,6 +4,7 @@ public class BubbleCollisionChecker : MonoBehaviour
 {
     public RectTransform rectTransform; // RectTransform of the current UI element
     private DraggableBubble draggableBubble; // Reference to DraggableBubble script
+    private DialogueTrigger dialogueTrigger; // Reference to DialogueTrigger if attached
 
     private void Awake()
     {
@@ -19,6 +20,9 @@ public class BubbleCollisionChecker : MonoBehaviour
         {
             Debug.LogError($"[BubbleCollisionChecker] No DraggableBubble component found on {gameObject.name}.");
         }
+
+        // Get the DialogueTrigger component (if attached)
+        dialogueTrigger = GetComponent<DialogueTrigger>();
     }
 
     private void Update()
@@ -41,13 +45,22 @@ public class BubbleCollisionChecker : MonoBehaviour
             // Check for RectTransform overlaps
             if (RectOverlaps(rectTransform, otherBubble.GetComponent<RectTransform>()))
             {
-                if (otherBubble.bubbleType == draggableBubble.bubbleType)
+                // Check for dialogue trigger on either bubble
+                DialogueTrigger otherDialogueTrigger = otherBubble.GetComponent<DialogueTrigger>();
+
+                if (dialogueTrigger != null)
                 {
-                    Debug.Log($"[BubbleCollisionChecker] {gameObject.name} overlapped with {otherBubble.name} of the same type.");
+                    Debug.Log($"[BubbleCollisionChecker] Triggering dialogue for {gameObject.name}.");
+                    dialogueTrigger.TriggerDialogue();
+                }
+                else if (otherDialogueTrigger != null)
+                {
+                    Debug.Log($"[BubbleCollisionChecker] Triggering dialogue for {otherBubble.name}.");
+                    otherDialogueTrigger.TriggerDialogue();
                 }
                 else
                 {
-                    Debug.Log($"[BubbleCollisionChecker] {gameObject.name} overlapped with {otherBubble.name}, but the types are different.");
+                    Debug.Log($"[BubbleCollisionChecker] Overlap detected, but no dialogue triggers found for {gameObject.name} or {otherBubble.name}.");
                 }
             }
         }
