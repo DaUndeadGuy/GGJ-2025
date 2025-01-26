@@ -142,14 +142,20 @@ MonoBehaviour:
         name: Reyna
         icon: {fileID: 0}
       line: TV is to broadcast as Cabinet is to store.
+      choices: []
     - character:
         name: MC
         icon: {fileID: 0}
       line: ..... What?
+      choices: []
     - character:
         name: Reyna
         icon: {fileID: 0}
       line: "It\u2019s an analogy! Come on, put that brain to use!"
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &158382111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 247477366942519185, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
@@ -468,10 +474,15 @@ MonoBehaviour:
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: 'Hey some cabinets! I remember how I used to hide in things like these
         before. '
+      choices: []
     - character:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: I wonder why ma'am used this in her sudden pop quiz analogy?
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &303164151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,9 +553,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6689347432278293553, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 701827757}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+--- !u!224 &329956821 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6689347432278293553, guid: a9d654ea7815f064f8606a2e6eee8043, type: 3}
+  m_PrefabInstance: {fileID: 329956820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &362411004
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +802,10 @@ MonoBehaviour:
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: "Huh? It\u2019s opened a little? Gee, they didn\u2019t think to look
         into the drawer first\u2026 Huh? Nevermind."
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &466203921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -832,6 +855,10 @@ MonoBehaviour:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: Untouched cushions hm.... These do look deceivingly neat.
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &609827819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,14 +928,20 @@ MonoBehaviour:
         name: Reyna
         icon: {fileID: 0}
       line: TV is to broadcast as Cabinet is to store.
+      choices: []
     - character:
         name: MC
         icon: {fileID: 0}
       line: ..... What?
+      choices: []
     - character:
         name: Reyna
         icon: {fileID: 0}
       line: "It\u2019s an analogy! Come on, put that brain to use!"
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &691887320
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -946,6 +979,68 @@ MonoBehaviour:
   OnCutsceneEnd:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &701827756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701827757}
+  - component: {fileID: 701827758}
+  m_Layer: 5
+  m_Name: Choices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &701827757
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701827756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 329956821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 178.7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &701827758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701827756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!4 &843231574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2427488911779726201, guid: dd235ea6f3a6f834fb5e39a7b16237e9, type: 3}
@@ -1463,6 +1558,10 @@ MonoBehaviour:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: Untouched cushions hm.... These do look deceivingly neat.
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1202865520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,11 +2543,16 @@ MonoBehaviour:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: "That is a huge television! I wonder why this wasn\u2019t stolen?"
+      choices: []
     - character:
         name: MC
         icon: {fileID: 1846137758, guid: 3d7d4f8aa43bf4a42b7506644e7340a4, type: 3}
       line: Perhaps it couldn't broadcast their favorite Telenovela. So much for
         rich people things I suppose.
+      choices: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1529675375
 MonoBehaviour:
   m_ObjectHideFlags: 0
